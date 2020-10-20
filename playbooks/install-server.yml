@@ -1,0 +1,27 @@
+---
+- name: Install nginx & PostgreSQL # 
+  hosts: dev1
+  become: true
+  tasks:
+  - name: Run command to update 
+    shell: apt upgrade -y; apt update
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: latest
+  - name: Start NGINX
+    service:
+      name: nginx
+      state: started
+  - name: Install PostgreSQL
+    apt:
+      name: postgresql
+      state: latest
+  - name: Start PostgreSQL
+    service:
+      name: postgresql
+      state: started
+
+
+
+

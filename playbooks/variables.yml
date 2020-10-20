@@ -1,0 +1,12 @@
+---
+- hosts: dev
+# 引入外部檔案，可對變數做管理
+  vars_files:
+    - vars.yml
+  vars:
+    variable1: "PlayBookValue"
+  tasks:
+    - name: variable value
+      debug: msg="Values are {{ variable1 }} and {{ var1 }} "
+
+      

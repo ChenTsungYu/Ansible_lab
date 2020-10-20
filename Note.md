@@ -103,3 +103,19 @@ ansible --list-host qa:dev
 ```
 ansible-playbook playbooks/ping-ec2.yml
 ```
+## 在 playbook 中宣告/使用變數
+參考`variables.yml`檔，除了可以在`.yml`檔中宣告的變數給定預設值外，亦可藉由終端機指令重新賦值
+### example
+賦值 `demoCLI` 給變數`variable1`
+```
+ansible-playbook playbooks/variables.yml -e variable1=demoCLI
+```
+## 引入外檔案內含的變數
+參考 `vars.yml` 與 `variables.yml` 檔
+
+# 模組化playbooks
+參考`modularize_playbooks.yml`檔，使用`import_playbook`語法來匯入其他的 playbooks
+## 列出 playbooks 所有的 tasks
+```
+ansible-playbook playbooks/modularize_playbooks.yml --list-tasks
+```
