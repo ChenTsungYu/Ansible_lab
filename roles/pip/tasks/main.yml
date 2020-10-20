@@ -1,0 +1,6 @@
+# Create role 
+---
+  - name: Install pip
+    apt:
+      name: python-pip
+      update_cache: yes # update_cache: yes 等同在安裝前執行 apt-get update 指令

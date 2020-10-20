@@ -1,0 +1,9 @@
+---
+- hosts: qa
+  tasks:
+    - name: Execute Shell Commands
+      # execute shell script
+      shell: uname
+      register: uname_result
+    # - debug: msg="{{ uname_result.stdout }}" # 指定物件 uname_result 的特定屬性用 "."
+    - debug: msg="{{ uname_result }}"

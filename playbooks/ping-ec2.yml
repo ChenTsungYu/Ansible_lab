@@ -1,0 +1,18 @@
+---
+# Run shell command with ansible
+- hosts: all
+  tasks:
+    - name: Ping All Servers 
+      action: ping
+    # 透過 Ansible 內建模組 - register 把 managed node 回傳的訊息存在 message 這個變數
+      register: message
+    - debug: msg="Ping All Servers ~"
+  # task 2
+    - name: output debug message
+      debug:
+        msg: "{{ message }}"
+
+# 指定 [dev] 底下的hosts
+- hosts: dev 
+  tasks:
+    - debug: msg="Hello Dev"

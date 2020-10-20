@@ -1,0 +1,21 @@
+# =============
+# [Group_name]、<host_name> ansible_host
+# 將hosts 拆分成多個Groups
+# =============
+[dev]
+dev1 ansible_host=EC2 Instance1 IP
+dev2 ansible_host=EC2 Instance2 IP
+
+[qa]
+qa1 ansible_host=EC2 Instance3 IP
+
+[first]
+dev1
+qa1
+
+[groupofgroups:children]
+dev
+first
+
+[devsubset]
+dev[1:2]

@@ -1,0 +1,6 @@
+---
+  - hosts: server
+    roles:
+      - { role: pip, become: yes } # become 表提升當前使用者權限 （等同 Unix / Linux 中的 sudo 指令）
+      - { role: curl, become: yes }
+      - { role: docker, become: yes }
