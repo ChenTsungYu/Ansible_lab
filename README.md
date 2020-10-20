@@ -10,6 +10,11 @@ Ansible_lab
     └── playbooks.yml
     └── ping.yml
     └── shell.yml
+    └── ansible-facts.yml
+    └── install-server.yml
+    └── modularize_playbooks.yml
+    └── variables.yml
+    └── vars.yml
 └── roles
     └── pip
         └── tasks
